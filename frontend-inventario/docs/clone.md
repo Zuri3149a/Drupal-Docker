@@ -16,8 +16,8 @@ Antes de empezar, asegúrate de tener instalado:
 
 ### Paso A: Obtener el código
 
-git clone <URL_DE_TU_REPOSITORIO>```  ```
-cd <NOMBRE_DE_LA_CARPETA>```  ```
+git clone ``` https://github.com/Zuri3149a/Drupal-Docker.git ```
+abrir carpeta```  cd Drupal```
 
 ### Paso B: Levantar el Backend (Docker)
 
