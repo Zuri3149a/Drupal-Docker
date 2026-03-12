@@ -1,0 +1,29 @@
+services:
+  drupal:
+    image: drupal:10-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - drupal_sites:/opt/drupal/web/sites
+      - drupal_modules:/opt/drupal/web/modules
+      - drupal_themes:/opt/drupal/web/themes
+    restart: always
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.11
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: drupal_db
+      MYSQL_USER: drupal_user
+      MYSQL_PASSWORD: drupal_password
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+
+volumes:
+  drupal_sites:
+  drupal_modules:
+  drupal_themes:
+  db_data:
